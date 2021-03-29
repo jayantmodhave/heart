@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+	<style>
+		body {
+			background:  url('https://cdn3.f-cdn.com/contestentries/990640/24169726/58e3a532e7ef3_thumb900.jpg')right top no-repeat,  url('https://previews.123rf.com/images/pitinan/pitinan1802/pitinan180200110/94772307-doctor-in-hospital-background-with-copy-space-healthcare-and-medical-concept-.jpg')  left top no-repeat; 
+			background-size:200px, cover;
+			background-attachment: fixed,fixed;
+		}
+	</style>
+  
+	<style>
+		input{
+		  height: 45px;
+		  width: 18%;
+		  border: 1px solid #000000;
+		  text-align: center;
+		  background-color: rgba(0,0,0,0.1);
+		  font-size:large;
+		  font-family: "Times New Roman", Times, serif;
+		}
+	</style>
+
+	<style>
+		textarea{
+		  height: 45px;
+		  width: 24%;
+		  border: 1px solid #000000;
+		  text-align: center;
+		  background-color:	rgba(0,0,0,0.1);
+		  font-size:large;
+		  font-family: "Times New Roman", Times, serif;
+		}
+	</style>
+
+	<style>
+		button{
+		  height: 50px;
+		  width: 8%;
+		  border: 2px solid #000000;
+		  background-color: #FF0000;
+		  position: center;
+		  text-align: center;
+		  font-family: "Times New Roman", Times, serif;
+		}
+		.button2 {background-color: #1EC00A;}
+	</style>
+
+	<style>
+		/* The Modal (background) */
+		.modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  padding-top: 100px; /* Location of the box */
+		  right: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+		  background-color: #f8f8f8;
+		  margin: auto;
+		  padding: 20px;
+		  border: 2px solid #000000;
+		  text-align: center;
+          position: right;
+          height: 175px;
+		  width: 40%;
+		}
+
+		/* The Close Button */
+		.close {
+		  color: #aaaaaa;
+		  float: right;
+		  font-size: 28px;
+		  font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		  color: #000;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+	</style>
+
+	<head>
+	</head>
+
+   <body>
+		<center>
+			<title>Heart Disease Prediction</title>
+			<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+			<form action="{{ url_for('Predict')}}"method="post">  
+			<div class="col-sm-9">
+				<marquee direction="LEFT" ><i><h1><b><font color="blue">Exceptional Care With Exceptional Technology</font color="blue"><b><h1></i></marquee><br><br><br><br><br>
+				<div class="main">
+					<div class=" register">
+						<h1><b><font color="#ff0000">PATIENT INFORMATION</font color="#ff0000"></b></h1><br><br><br>
+						<form id="register" method="post">
+							<div class="textbox">
+								<i class="fas fa-walking"></i>
+								<label><b>Age:</label>
+								<br><br>
+								<input type="number" id="query1" name="query1"  min="0" max="125" required autofocus>
+								<br><br><br>
+							</div>
+							<div class="textbox">
+								<i class="fas fa-venus-mars"></i>
+								<label>Gender (for Female=0 & Male=1):</label>
+								<br><br>
+								<input type="number" id="query2" name="query2"  min="0" max="1" required><br><br><br>
+							</div>
+		
+							<div class="textbox">
+								<i class='fas fa-smoking'></i>
+								<label>Cigarets Per Day (Put '0' if not smoke):</label><br><br>
+								<input type="number" id="query3" name="query3"  min="0" max="100" required><br><br><br>
+							</div>
+							<div class="textbox">
+								<i class="fas fa-capsules"></i>
+								<label> Hypertensive (For NO=0 & Yes=1):</label><br><br>
+								<input type="number" id="query4" name="query4"  min="0" max="1" required><br><br><br>
+							</div>	
+							<div class="textbox">
+								<i class="fas fa-heartbeat"></i>
+								<label>Heart Rate:</label><br><br>
+								<input type="number" id="query5" name="query5"  min="35" max="200" required><br><br><br>
+							</div>
+							<div class="textbox">
+								<i class="fas fa-dumbbell"></i>
+								<label>Body Mass Index:</label><br><br>
+								<input type="number" id="query6" name="query6"  min="15" max="40" required><br><br><br>
+							</div>
+							<div class="textbox">
+								<i class="fas fa-notes-medical"></i>
+								<label>Systolic Blood Pressure:</label><br><br>
+								<input type="number" id="query7" name="query7"  min="50" max="250" required><br><br><br>
+							</div>
+							<div class="textbox">
+								<i class="fas fa-book-medical"></i>
+								<label>Diastolic Blood Pressure</label><br><br>
+								<input type="number" id="query8" name="query8"  min="30" max="200" required><br><br><br>
+							</div>
+							<div class="textbox">
+								<i class="fas fa-wine-bottle"></i>
+								<label>Glucose Level:</label><br><br>
+								<input type="number" id="query9" name="query9"  min="50" max="500" required><br><br><br><br><br>
+							</div>		
+							<button type="submit" class="btn btn-primary" name="submit"><b><h3><font color="white"> PREDICT </font color="white"><h3></b></button><br><br><br><br><br>
+							
+							
+							<!-- Trigger/Open The Modal -->
+							
+                            <button class="button button2" id="myBtn" autofocus><b><h3><font color="white">RESULT</font color="white"><h3></b></button><br><br><br><br><br>
+							<!-- The Modal -->
+							<div id="myModal" class="modal">
+
+								  <!-- Modal content -->
+								<div class="modal-content">
+									
+									<div class="row"> 
+										<h1 style="color:#000EFB;"><b><i> {{output1}}</i></h1></b>
+										<h2 style="color:#00cd18;"><b><i> {{output2}}</i></h2></b>
+										
+									</div>
+								</div>
+
+							</div>
+
+							<script>
+								// Get the modal
+								var modal = document.getElementById("myModal");
+
+								// Get the button that opens the modal
+								var btn = document.getElementById("myBtn");
+
+								// Get the <span> element that closes the modal
+								//var span = document.getElementsByClassName("close")[0];
+
+								// When the user clicks the button, open the modal 
+								btn.onclick = function() {
+								  modal.style.display = "block";
+								}
+
+								// When the user clicks on <span> (x), close the modal
+								/* span.onclick = function() {
+								  modal.style.display = "none";
+								}*/
+
+								// When the user clicks anywhere outside of the modal, close it
+								window.onclick = function(event) {
+								  if (event.target == modal) {
+									modal.style.display = "none";
+								  }
+								} 
+							</script>
+
+						</form>
+					</div>
+				</div>
+			</div>
+			</form>
+		</center>
+    </body>
+</html>
